@@ -109,6 +109,142 @@ header h1 span:hover {
   margin-bottom: 30px;
 }
 
+
+/*==================
+ CONTACT PAGE
+====================*/
+
+.mu-title {
+  display: inline;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+
+#mu-contact {
+  display: inline;
+  float: left;
+  padding: 100px 0;
+  width: 100%;
+}
+
+#mu-contact .mu-contact-area {
+  display: inline;
+  float: left;
+  width: 100%;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content {
+  display: inline;
+  float: left;
+  margin-top: 50px;
+  width: 100%;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform {
+  display: inline;
+  float: left;
+  width: 100%;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform .reply-title {
+  font-size: 25px;
+  margin-top: 0;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform label {
+  display: block;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform label .required {
+  color: #f60;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform input[type="text"],
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform input[type="email"],
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform input[type="url"] {
+  border: none;
+  border: 1px solid #ddd;
+  color: #555;
+  margin-bottom: 10px;
+  height: 35px;
+  padding: 5px;
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform textarea {
+  border: none;
+  border: 1px solid #ddd;
+  color: #555;
+  margin-bottom: 5px;
+  padding: 10px;
+  height: 150px;
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform .form-submit input {
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-right {
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ width: 44%;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-right iframe {
+  height: 500px;
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-right iframe {
+    height: 300px;
+  }    
+        
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-right {
+    margin-top: 50px;
+  }
+}
+
+#mu-contact {
+    padding: 50px 0;
+  }
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-right iframe {
+    height: 350px;
+  }
+}
+
+#mu-contact .mu-contact-area .mu-contact-content .mu-contact-right iframe {
+    height: 300px;
+}
+
+/*==================
+ END CONTACT PAGE
+====================*/
+
+
 /* footer */
 .social {
   display: flex;
