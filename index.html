@@ -12,9 +12,7 @@
 
 
 <!--START SCROLL TOP BUTTON -->
-    <a class="scrollToTop" href="#">
-      <i class="fa fa-angle-up"></i>      
-    </a>
+   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <!-- END SCROLL TOP BUTTON -->
 	
 	
@@ -127,49 +125,29 @@
  
 
 
-<!-- jQuery library -->
-  <script src="assets/js/jquery.min.js"></script>  
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="assets/js/bootstrap.js"></script>   
-  <!-- Slick slider -->
-  <script type="text/javascript" src="assets/js/slick.js"></script>
-  <!-- Counter -->
-  <script type="text/javascript" src="assets/js/waypoints.js"></script>
-  <script type="text/javascript" src="assets/js/jquery.counterup.js"></script>  
-  <!-- Mixit slider -->
-  <script type="text/javascript" src="assets/js/jquery.mixitup.js"></script>
-  <!-- Add fancyBox -->        
-  <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
-  
-  
-  <!-- Custom js -->
-  <script src="assets/js/custom.js"></script> 
-
-
 <script>
+
+//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 	
-/* ----------------------------------------------------------- */
-  /*  12. SCROLL TOP BUTTON
-  /* ----------------------------------------------------------- */
-
-  //Check to see if the window is top if not then display button
-
-    jQuery(window).scroll(function(){
-      if (jQuery(this).scrollTop() > 300) {
-        jQuery('.scrollToTop').fadeIn();
-      } else {
-        jQuery('.scrollToTop').fadeOut();
-      }
-    });
-     
-    //Click event to scroll to top
-
-    jQuery('.scrollToTop').click(function(){
-      jQuery('html, body').animate({scrollTop : 0},800);
-      return false;
-    }); 	
-	
-</script>	
+</script>
 
 	</body>
 </html>
