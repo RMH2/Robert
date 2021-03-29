@@ -17,45 +17,93 @@
 	
 	
   <body>
-    <!-- nav menu -->
-    <nav>
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Work</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-    <!-- page header -->
-    <header>
-      <h1>Hi! I'm <span>Ami Mizuno</span>.</h1>
-      <h2>I'm a digital <span>designer</span> and <span>developer</span> with a love for cats.</h2>
-    </header>
-    <!-- about me section -->
-    <section class="about container">
-      <h2>About</h2>
-      <img class="profile-img" src="images/profile.png" alt="Ami Mizuno">
-      <p>Soufflé sesame snaps dragée. Cotton candy bear claw jelly sweet roll jelly beans. Liquorice danish candy canes lollipop candy biscuit gingerbread cake. Sugar plum topping marshmallow dessert pudding donut croissant.</p>
-    </section>
-    <!-- my skills section -->
-    <section class="skills container">
-      <h2>Skills</h2>
-      <ul>
-        <li>Photoshop</li>
-        <li>Branding</li>
-        <li>Logo Design</li>
-      </ul>
-    </section>
-    <!-- my work section -->
-    <section class="work container">
-      <h2>Work</h2>
-      <p>Here are some past projects:</p>
-      <div class="work-items">
-        <img src="images/luna_computer.png" alt="Luna Website">
-        <img src="images/moon_wallpaper.png" alt="Moon Wall Paper Design">
-        <img src="images/sailor_v.png" alt="Sailor V Branding">
-      </div>
-    </section>
+   <div id="nav-container">
+  <!-- mobile navigaation -->
+  <div id="nav">
+    <a id="link-hero"   href="#hero"  class="link"></a>
+    <a id="link-one"    href="#one"   class="link"></a>
+    <a id="link-two"    href="#two"   class="link"></a>
+    <a id="link-three"  href="#three" class="link"></a>
+  </div>
+  <!-- desktop navigaation -->
+  <ul id="menu">
+    <li data-menuanchor="firstPage"><a id="menu-hero" href="#firstPage"></a></li>
+    <li data-menuanchor="secondPage"><a id="menu-one" href="#secondPage"></a></li>
+    <li data-menuanchor="3rdPage"><a id="menu-two" href="#3rdPage"></a></li>
+    <li data-menuanchor="4thpage"><a id="menu-three" href="#4thpage"></a></li>
+  </ul>
+</div>
+
+
+
+<div id="fullpage">
+  <div id="hero"  class="section">
+    <h1>Hero section</h1>
+    <p>
+      Lorem ipsum dolor sit amet, 
+      consectetur adipiscing elit, 
+      sed do eiusmod tempor 
+      incididunt ut labore et 
+      dolore magna aliqua.
+    </p>
+    <div class="arrow-box">
+      <div class="arrow"></div>
+    </div>
+  </div><!-- end hero -->
+  <div id="one"   class="section">
+    <h1>Section one</h1>
+    <p>
+      Lorem ipsum dolor sit amet, 
+      consectetur adipiscing elit, 
+      sed do eiusmod tempor 
+      incididunt ut labore et 
+      dolore magna aliqua.
+    </p>
+    <div class="icon-box">
+      <div class="icon"><i class="fas fa-american-sign-language-interpreting"></i></div>
+      <div class="icon"><i class="fas fa-balance-scale"></i></div>
+      <div class="icon"><i class="fas fa-bomb"></i></div>
+    </div>
+    <div class="arrow-box">
+      <div class="arrow"></div>
+    </div>
+  </div><!-- end one -->
+  <div id="two"   class="section">
+    <h1>Section two</h1>
+    <p>
+      Lorem ipsum dolor sit amet, 
+      consectetur adipiscing elit, 
+      sed do eiusmod tempor 
+      incididunt ut labore et 
+      dolore magna aliqua.
+    </p>
+    <div class="arrow-box">
+      <div class="arrow"></div>
+    </div>
+  </div><!-- end two -->
+  <div id="three"  class="section">
+    <div class="three-text-wrapper">
+      <h1>Section three</h1>
+      <p>
+        Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit, 
+        sed do eiusmod tempor 
+        incididunt ut labore et 
+        dolore magna aliqua.
+      </p>
+    </div>
+    <div id="footer">
+      <p>this is a footer</p>
+      <a href="https://codepen.io/SofiaSergio/" target="_blank">
+        <div id="link">
+          <i class="fab fa-codepen"></i>
+          <p>watch other pens</p>
+        </div>
+      </a>
+    </div>
+  </div><!-- end three -->
+</div>
+
     
      <!-- Start contact  -->
  <section class="mu-contact">
@@ -148,6 +196,178 @@ function topFunction() {
 }
 	
 </script>
+<script>
 
+$(document).ready(function() {
+  
+// FULLPAGE --> scroll  
+  
+  ///////////////// mobile
+  if ($(window).width() < 1024) {
+     // alert('mobile');
+    $('#fullpage').fullpage({
+      autoScrolling: false,     //scroll
+      verticalCentered: false   //flex
+    });
+    
+    // LINK --> smooth scroll to div in mobile
+    var heroLink    = $('#link-hero');
+    var hero        = $('#hero');
+    var oneLink     = $('#link-one');
+    var one         = $('#one');
+    var twoLink     = $('#link-two');
+    var two         = $('#two');
+    var threeLink   = $('#link-three');
+    var three       = $('#three');
+
+    heroLink.on('click', function(){
+        $('html, body').animate({
+        scrollTop: hero.offset().top
+      }, 1000)
+    });
+    oneLink.on('click', function(){
+        $('html, body').animate({
+        scrollTop: one.offset().top
+      }, 1000)
+    });
+    twoLink.on('click', function(){
+        $('html, body').animate({
+        scrollTop: two.offset().top
+      }, 1000)
+    });
+    threeLink.on('click', function(){
+        $('html, body').animate({
+        scrollTop: three.offset().top
+      }, 1000)
+    });
+    
+  }  
+  
+  ///////////////// desktop
+  else {
+     //alert('desktop'); 
+    $('#fullpage').fullpage({
+      anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+      autoScrolling: true,      //scroll
+      verticalCentered: false   //flex
+    });
+  }
+  
+  
+  
+  // Init ScrollMagic
+  var controller = new ScrollMagic.Controller();
+  // /////////////////////////////////////////////////////
+  // ///////////////////////////////////////////////mobile
+  // hero
+  var mobileHero = new ScrollMagic.Scene({
+    triggerElement: '#hero',
+    duration: '100%',
+    triggerHook: 0, //position trigger
+    reverse: true, //animation always
+  })
+  .setClassToggle('#link-hero', 'link-active')
+  // .addIndicators({
+  //   colorTrigger: 'black',
+  //   colorStart: '#000',
+  // })
+  .addTo(controller);
+  // one
+  var mobileOne = new ScrollMagic.Scene({
+    triggerElement: '#one',
+    duration: '100%',
+    triggerHook: 0, //position trigger
+    reverse: true, //animation always
+  })
+  .setClassToggle('#link-one', 'link-active')
+  .addTo(controller);
+  // two
+  var mobileTwo = new ScrollMagic.Scene({
+    triggerElement: '#two',
+    duration: '100%',
+    triggerHook: 0, //position trigger
+    reverse: true, //animation always
+  })
+  .setClassToggle('#link-two', 'link-active')
+  .addTo(controller);
+  // three
+  var mobileThree = new ScrollMagic.Scene({
+    triggerElement: '#three',
+    duration: '100%',
+    triggerHook: 0, //position trigger
+    reverse: true, //animation always
+  })
+  .setClassToggle('#link-three', 'link-active')
+  .addTo(controller);
+  // /////////////////////////////////////////////////////
+  // ///////////////////////////////////////////////desktop
+  // hero
+  var desktopHero = new ScrollMagic.Scene({
+    triggerElement: '#hero',
+    duration: '100%',
+    triggerHook: 0, //position trigger
+    reverse: true, //animation always
+  })
+  .setClassToggle('#menu-hero', 'link-active')
+  .addTo(controller);
+  // one
+  var desktopOne = new ScrollMagic.Scene({
+    triggerElement: '#one',
+    duration: '100%',
+    triggerHook: 0, //position trigger
+    reverse: true, //animation always
+  })
+  .setClassToggle('#menu-one', 'link-active')
+  .addTo(controller);
+  // two
+  var desktopTwo = new ScrollMagic.Scene({
+    triggerElement: '#two',
+    duration: '100%',
+    triggerHook: 0, //position trigger
+    reverse: true, //animation always
+  })
+  .setClassToggle('#menu-two', 'link-active')
+  .addTo(controller);
+  // three
+  var desktopTwo = new ScrollMagic.Scene({
+    triggerElement: '#three',
+    duration: '100%',
+    triggerHook: 0, //position trigger
+    reverse: true, //animation always
+  })
+  .setClassToggle('#menu-three', 'link-active')
+  .addTo(controller);
+  
+  
+  // /////////////////////////////////////////////////////
+  // ///////////////////////////////////////////////animation icon
+  var controller = new ScrollMagic.Controller();
+    
+    var icon = $('.icon');
+    var icon01 = $('.icon01');
+    var icon02 = $('.icon02');
+    var icon03 = $('.icon03');
+  
+    var tl1 = new TimelineMax().add([
+                     TweenMax.from(icon, 1, {y: 50, autoAlpha: 0, ease:Power1.easeOut})      
+                     ]);
+         
+    new ScrollMagic.Scene({
+            triggerElement: ('#one h1'),
+            triggerHook: 0.5
+          })
+          .setTween(tl1)
+          // .addIndicators({
+          //   name: 'icon',
+          //   colorTrigger: 'black',
+          //   colorStart: 'cyan',
+          //   colorEnd: 'purple'
+          // })
+          .addTo(controller);
+  
+});
+
+</script>	
+	
 	</body>
 </html>
