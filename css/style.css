@@ -26,6 +26,22 @@
 
 /* End Scroll to Top */
 
+/* Nav Bar */
+.navbar {
+  background-color: rgba(255, 255, 255, .90)
+}
+
+.navbar-toggle {
+  float: left;
+  margin-left: 15px
+}
+
+.navbar-default .navbar-nav>li>a {
+  font-weight: bold;
+  color: #252525;
+}
+
+/* Nav Bar */
 
 body {
   font-family: 'Montserrat', sans-serif;
